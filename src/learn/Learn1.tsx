@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Test1() {
   const [count, setCount] = useState(1);
@@ -57,7 +57,7 @@ function Test4() {
 }
 
 // 父子组件
-function Test5(element) {
+function Test5(element: React.JSX.Element) {
   return (
     <>
       <div>Father</div>
@@ -109,16 +109,25 @@ const Test9 = () => {
   ];
   const [commentData, setCommentData] = useState(data);
   const [commentType, setCommentType] = useState(0);
-  const switchCommentType = (type) => {
-    let sortData;
+
+  const switchCommentType = (type: 0 | 1) => {
+    let sortData: any;
     switch (type) {
       case 0:
-        sortData = [...commentData].sort(
-          (a, b) => new Date(b.publish_date) - new Date(a.publish_date),
-        );
+        sortData = [...commentData].sort((a, b) => {
+          // 确保 publish_date 是有效的日期
+          const dateA = new Date(a.publish_date).getTime();
+          const dateB = new Date(b.publish_date).getTime();
+          return dateB - dateA;
+        });
         break;
       case 1:
-        sortData = [...commentData].sort((a, b) => b.like - a.like);
+        sortData = [...commentData].sort((a, b) => {
+          // 确保 like 是数字
+          const likeA = a.like ?? 0;
+          const likeB = b.like ?? 0;
+          return likeB - likeA;
+        });
         break;
       default:
         throw new Error("类型异常");
