@@ -6,7 +6,12 @@ function Test1() {
   return (
     <>
       <div style={{ color: "red", fontSize: "20px" }}>{count} </div>
-      <button onClick={() => setCount(count + 1)}>{"count++"}</button>
+      <button
+        className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 transition duration-200"
+        onClick={() => setCount(count + 1)}
+      >
+        {"count++"}
+      </button>
     </>
   );
 }

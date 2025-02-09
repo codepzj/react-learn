@@ -18,7 +18,12 @@ function Learn3() {
         >
           获取异步数据
         </button>
-        <button onClick={doubleCount}>获取2倍数据</button>
+        <button
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-200"
+          onClick={doubleCount}
+        >
+          获取2倍数据
+        </button>
       </div>
     </>
   );

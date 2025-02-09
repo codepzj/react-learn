@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-// Test10 相关类型定义
+// Test1 相关类型定义
 interface CountAction {
   type: "add" | "sub";
 }
@@ -9,7 +9,7 @@ interface CountState {
   count: number;
 }
 
-const Test10 = () => {
+const Test1 = () => {
   const reducer = (state: CountState, action: CountAction): CountState => {
     switch (action.type) {
       case "add":
@@ -44,7 +44,7 @@ const Test10 = () => {
   );
 };
 
-// Test11 相关类型定义
+// Test2 相关类型定义
 interface CartData {
   name: string;
   price: number;
@@ -69,7 +69,7 @@ interface UpdateNameAction extends CartActionBase {
 
 type CartAction = AddAction | UpdateNameAction;
 
-const Test11 = () => {
+const Test2 = () => {
   const initData: CartData[] = [
     { name: "小满(只)", price: 100, count: 1, id: 1, isEdit: false },
     { name: "中满(只)", price: 200, count: 1, id: 2, isEdit: false },
@@ -163,8 +163,8 @@ const Test11 = () => {
 const Learn2 = () => {
   return (
     <>
-      <Test10 />
-      <Test11 />
+      <Test1 />
+      <Test2 />
     </>
   );
 };

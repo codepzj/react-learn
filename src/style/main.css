@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://cdn.jsdelivr.net/npm/cn-fontsource-lxgw-wen-kai-gb-screen/font.css");
+
+html {
+  font-family: Roboto, "LXGW WenKai GB Screen", sans-serif;
+}
+
+.active {
+  color: blue;
+}
 .test8 {
   color: green;
 }
