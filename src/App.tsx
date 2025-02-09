@@ -1,14 +1,21 @@
 import { Outlet, NavLink } from "react-router";
 import { useNavigate } from "react-router";
+import useGlobalStore from "./store/useGlobal";
 function App() {
   const navigate = useNavigate();
+  const { theme, changeTheme } = useGlobalStore();
   return (
-    <>
+    <div className="bg-white text-black h-screen w-full">
       <div className="flex justify-between">
         <div className="font-bold text-2xl">codepzj的React学习代码</div>
-        <button className="text-red-500" onClick={() => navigate("/")}>
-          🏠 跳转回首页
-        </button>
+        <div>
+          <button onClick={changeTheme}>
+            {theme === "light" ? "亮色" : "暗色"}
+          </button>
+          <button className="text-red-500" onClick={() => navigate("/")}>
+            🏠 跳转回首页
+          </button>
+        </div>
       </div>
       <div className="h-8"></div>
       <div className="flex">
@@ -32,7 +39,7 @@ function App() {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

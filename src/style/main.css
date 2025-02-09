@@ -9,7 +9,10 @@ html {
 }
 
 .active {
-  color: blue;
+  color: green
+}
+.dark .active {
+  color: rgb(130, 231, 180);
 }
 .test8 {
   color: green;
