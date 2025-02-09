@@ -39,6 +39,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.0.3
         version: 19.0.3(@types/react@19.0.8)
+      postcss-prune-var:
+        specifier: ^1.1.2
+        version: 1.1.2
       tailwindcss:
         specifier: 3.4.17
         version: 3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
@@ -4329,6 +4332,9 @@ packages:
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.2
+
+  postcss-prune-var@1.1.2:
+    resolution: {integrity: sha512-frMnVhQ4SXAY2tfRQmqfdIa6125XtfZUvB1D+t9n63Z12zp4MV6p7TAGipa7Ici9OoQt2XrXgVXdKBQD1ubTUw==}
 
   postcss-pseudo-class-any-link@7.1.6:
     resolution: {integrity: sha512-9sCtZkO6f/5ML9WcTLcIyV1yz9D1rf0tWc+ulKcvV30s0iZKS/ONyETvoWsr6vnrmW+X+KmuK3gV/w5EWnT37w==}
@@ -10750,6 +10756,10 @@ snapshots:
       postcss-replace-overflow-wrap: 4.0.0(postcss@8.5.1)
       postcss-selector-not: 6.0.1(postcss@8.5.1)
       postcss-value-parser: 4.2.0
+
+  postcss-prune-var@1.1.2:
+    dependencies:
+      minimatch: 9.0.5
 
   postcss-pseudo-class-any-link@7.1.6(postcss@8.5.1):
     dependencies:

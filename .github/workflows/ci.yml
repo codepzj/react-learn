@@ -1,0 +1,35 @@
+name: Deploy React Learn Project
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Node.js
+      - name: install nodejs
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: "20.12.0"
+
+      # Use pnpm package manager
+      - name: use pnpm
+        run: npm i -g pnpm && pnpm config set registry https://registry.npmmirror.com
+
+      # Install dependencies
+      - name: install packages
+        run: pnpm install --no-frozen-lockfile
+
+      # Build the React project
+      - name: build
+        run: pnpm run build
+
+      # Deploy the project to Github Pages
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build # The folder the action should deploy.
