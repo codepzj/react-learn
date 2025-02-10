@@ -1,19 +1,23 @@
 import { Outlet, NavLink } from "react-router";
 import { useNavigate } from "react-router";
 import useGlobalStore from "./store/useGlobal";
-function App() {
+import React from "react";
+import "@/style/main.css";
+import { FaHome } from "react-icons/fa";
+import { ImSun } from "react-icons/im";
+const App: React.FC = () => {
   const navigate = useNavigate();
-  const { theme, changeTheme } = useGlobalStore();
+  const { initTheme, changeTheme } = useGlobalStore();
+  initTheme();
   return (
     <div className="bg-white text-black h-screen w-full">
-      <div className="flex justify-between">
-        <div className="font-bold text-2xl">codepzj的React学习代码</div>
-        <div>
-          <button onClick={changeTheme}>
-            {theme === "light" ? "亮色" : "暗色"}
+      <div className="flex justify-end text-2xl">
+        <div className="flex justify-between px-4 py-2">
+          <button className="mr-4" onClick={changeTheme}>
+            <ImSun />
           </button>
-          <button className="text-red-500" onClick={() => navigate("/")}>
-            🏠 跳转回首页
+          <button onClick={() => navigate("/")}>
+            <FaHome />
           </button>
         </div>
       </div>
@@ -36,11 +40,17 @@ function App() {
             <li>
               <NavLink to={"/learn4"}>Learn4-React-Router</NavLink>
             </li>
+            <li>
+              <NavLink to={"/learn5"}>Learn5-React生命周期钩子</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/learn6"}>Learn6-React之useEffect</NavLink>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;
