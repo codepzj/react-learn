@@ -46,6 +46,9 @@ const App: React.FC = () => {
             <li>
               <NavLink to={"/learn6"}>Learn6-React之useEffect</NavLink>
             </li>
+            <li>
+              <NavLink to={"/test1"}>Test1-复杂类型渲染</NavLink>
+            </li>
           </ul>
         </div>
       </div>

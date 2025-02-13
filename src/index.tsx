@@ -12,6 +12,7 @@ import Files from "@/learn/learn4/files";
 import NotFound from "@/learn/NotFound";
 import Learn5 from "@/learn/learn5";
 import Learn6 from "@/learn/Learn6";
+import Test from "@/Test/test1.jsx";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
@@ -34,6 +35,7 @@ root.render(
           </Route>
           <Route path="learn5" element={<Learn5 />} />
           <Route path="learn6" element={<Learn6 />} />
+          <Route path="test1" element={<Test />} />
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
